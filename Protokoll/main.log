@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.4.30)  29 OCT 2018 13:57
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.4.30)  31 OCT 2018 17:17
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.276 seconds
+luaotfload | main : initialization completed in 0.287 seconds
 Babel <3.19> and hyphenation patterns for 1 language(s) loaded.
 (./header.tex (c:/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
@@ -598,24 +598,24 @@ Lua module: polyglossia 2013/05/11 1.3 Polyglossia)
 (c:/texlive/2018/texmf-dist/tex/latex/polyglossia/gloss-german.ldf
 File: gloss-german.ldf polyglossia: module for german
 Module polyglossia Info: Language data for german
+(polyglossia)            synonyms	table: 0737BE58
+(polyglossia)            patterns	hyph-de-1901.pat.txt
+(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
 (polyglossia)            righthyphenmin	2
 (polyglossia)            loader	loadhyph-de-1901.tex
-(polyglossia)            patterns	hyph-de-1901.pat.txt
-(polyglossia)            hyphenation	
-(polyglossia)            synonyms	table: 0730D358
 (polyglossia)            patterns: hyph-de-1901.pat.txt on input line 6
 Module polyglossia Info: Language german was not yet loaded; created with id 4 o
 n input line 6
 Module polyglossia Info: Language german already loaded; id is 4 on input line 6
 
 Module polyglossia Info: Language data for ngerman
+(polyglossia)            synonyms	table: 0737C178
+(polyglossia)            patterns	hyph-de-1996.pat.txt
+(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
 (polyglossia)            righthyphenmin	2
 (polyglossia)            loader	loadhyph-de-1996.tex
-(polyglossia)            patterns	hyph-de-1996.pat.txt
-(polyglossia)            hyphenation	
-(polyglossia)            synonyms	table: 0730D150
 (polyglossia)            patterns: hyph-de-1996.pat.txt on input line 68
 Module polyglossia Info: Language ngerman was not yet loaded; created with id 8 
 on input line 68
@@ -2089,20 +2089,136 @@ Module polyglossia Info: Language ngerman already loaded; id is 8 on input line
 \openout5 = main.toc
  [2
 
-] (./content/einleitung.tex) (./content/theorie.tex)
-[3] (./content/durchfuehrung.tex
-<Abbildungen/Aufbau.png, id=49, 565.51276pt x 423.984pt>
+] (./content/einleitung.tex) (./content/theorie.tex
+<Abbildungen/2dgitter.png, id=55, 754.017pt x 327.02174pt>
+File: Abbildungen/2dgitter.png Graphic file (type png)
+<use Abbildungen/2dgitter.png>
+Package luatex.def Info: Abbildungen/2dgitter.png  used on input line 11.
+(luatex.def)             Requested size: 418.25555pt x 181.39941pt.
+
+[3<./Abbildungen/2dgitter.png>](load luc: C:/texlive/2018/texmf-var/luatex-cache
+/generic/fonts/otl/lmroman8-regular.luc)(load luc: C:/texlive/2018/texmf-var/lua
+tex-cache/generic/fonts/otl/lmroman5-regular.luc)
+<Abbildungen/System.png, id=69, 645.00975pt x 478.1865pt>
+File: Abbildungen/System.png Graphic file (type png)
+<use Abbildungen/System.png>
+Package luatex.def Info: Abbildungen/System.png  used on input line 29.
+(luatex.def)             Requested size: 418.25555pt x 310.08058pt.
+ [4<./Abbildungen/System.png>]
+<Abbildungen/raumzentriert.png, id=81, 329.43076pt x 248.72925pt>
+File: Abbildungen/raumzentriert.png Graphic file (type png)
+<use Abbildungen/raumzentriert.png>
+Package luatex.def Info: Abbildungen/raumzentriert.png  used on input line 44.
+(luatex.def)             Requested size: 188.21371pt x 142.10733pt.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 45.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 45.
+<Abbildungen/flaechenzentriert.png, id=82, 283.0575pt x 242.70676pt>
+File: Abbildungen/flaechenzentriert.png Graphic file (type png)
+<use Abbildungen/flaechenzentriert.png>
+Package luatex.def Info: Abbildungen/flaechenzentriert.png  used on input line 4
+8.
+(luatex.def)             Requested size: 188.21371pt x 161.38684pt.
+
+Underfull \hbox (badness 3746) in paragraph at lines 49--49
+[][]|\TU/lmr/m/n/10 Das kubisch-flächenzentrierte Git-ter
+ []
+
+<Abbildungen/hexagonal.png, id=86, 300.52275pt x 393.26926pt>
+File: Abbildungen/hexagonal.png Graphic file (type png)
+<use Abbildungen/hexagonal.png>
+Package luatex.def Info: Abbildungen/hexagonal.png  used on input line 79.
+(luatex.def)             Requested size: 125.47794pt x 164.20583pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--84
+
+ []
+
+[5<./Abbildungen/raumzentriert.png><./Abbildungen/flaechenzentriert.png>]
+<Abbildungen/miller.png, id=97, 308.95425pt x 218.0145pt>
+File: Abbildungen/miller.png Graphic file (type png)
+<use Abbildungen/miller.png>
+Package luatex.def Info: Abbildungen/miller.png  used on input line 93.
+(luatex.def)             Requested size: 188.21371pt x 132.81232pt.
+<Abbildungen/netzebene.png, id=98, 420.97275pt x 369.17924pt>
+File: Abbildungen/netzebene.png Graphic file (type png)
+<use Abbildungen/netzebene.png>
+Package luatex.def Info: Abbildungen/netzebene.png  used on input line 97.
+(luatex.def)             Requested size: 188.21371pt x 165.05318pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--112
+
+ []
+
+[6<./Abbildungen/hexagonal.png>] [7<./Abbildungen/miller.png><./Abbildungen/netz
+ebene.png>]
+<Abbildungen/streuung.png, id=128, 283.65974pt x 174.05025pt>
+File: Abbildungen/streuung.png Graphic file (type png)
+<use Abbildungen/streuung.png>
+Package luatex.def Info: Abbildungen/streuung.png  used on input line 157.
+(luatex.def)             Requested size: 188.21371pt x 115.48433pt.
+<Abbildungen/streuwinkel.png, id=129, 224.037pt x 237.2865pt>
+File: Abbildungen/streuwinkel.png Graphic file (type png)
+<use Abbildungen/streuwinkel.png>
+Package luatex.def Info: Abbildungen/streuwinkel.png  used on input line 161.
+(luatex.def)             Requested size: 188.21371pt x 199.34825pt.
+(load luc: C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-reg
+ular.luc)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8]
+
+LaTeX Warning: Reference `eq:winkel' on page 9 undefined on input line 193.
+
+
+LaTeX Warning: Reference `eq:streuA' on page 9 undefined on input line 201.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--203
+
+ []
+
+[9<./Abbildungen/streuung.png><./Abbildungen/streuwinkel.png>]
+
+LaTeX Warning: Reference `eq:Struk' on page 10 undefined on input line 208.
+
+
+LaTeX Warning: Reference `fig:bragg' on page 10 undefined on input line 217.
+
+<Abbildungen/bragg.png, id=159, 486.618pt x 349.305pt>
+File: Abbildungen/bragg.png Graphic file (type png)
+<use Abbildungen/bragg.png>
+Package luatex.def Info: Abbildungen/bragg.png  used on input line 220.
+(luatex.def)             Requested size: 418.25555pt x 300.24187pt.
+
+LaTeX Warning: Reference `eq:gang2' on page 10 undefined on input line 224.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `eq:bragg' on page 10 undefined on input line 229.
+
+
+LaTeX Warning: Reference `eq:Struk2' on page 10 undefined on input line 239.
+
+) [10] (./content/durchfuehrung.tex
+<Abbildungen/Aufbau.png, id=172, 565.51276pt x 423.984pt>
 File: Abbildungen/Aufbau.png Graphic file (type png)
 <use Abbildungen/Aufbau.png>
-Package luatex.def Info: Abbildungen/Aufbau.png  used on input line 8.
+Package luatex.def Info: Abbildungen/Aufbau.png  used on input line 9.
 (luatex.def)             Requested size: 418.25555pt x 313.5815pt.
-(load luc: C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-reg
-ular.luc)(load luc: C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/lmr
-oman5-regular.luc)) [4<./Abbildungen/Aufbau.png>] [5] (./content/auswertung.tex
-) [6] (./content/diskussion.tex) [7] [8]
-(./content/anhang.tex)
+ [11<./Abbildungen/bragg.png>] [12<./Abbildungen/Aufbau.png>]) [13] (./content/
+auswertung.tex) [14]
+(./content/diskussion.tex) [15] [16] (./content/anhang.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
- [9]
+ [17]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
  (./main.aux
 Module polyglossia Info: Language ngerman already loaded; id is 8 on input line 
@@ -2115,10 +2231,20 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
 Package rerunfilecheck Warning: File `main.aux' has changed. Rerun.
 
 Package rerunfilecheck Info: Checksums for `main.aux':
-(rerunfilecheck)             Before: BBC02624A7CD85202ED4EBBD9D8BAF64;5580
-(rerunfilecheck)             After:  3A5DAEF0AA7B807BF387A4B6ADFB0C74;5612.
-Package rerunfilecheck Info: File `main.toc' has not changed.
-(rerunfilecheck)             Checksum: 4A7A5A6B97762FCAA55DE2B9EB40A960;798.
+(rerunfilecheck)             Before: EDEE261179425ABEF917D85340E21753;12858
+(rerunfilecheck)             After:  348CA9E05EF802359DE400FFA0423988;13257.
+
+Package rerunfilecheck Warning: File `main.toc' has changed. Rerun.
+
+Package rerunfilecheck Info: Checksums for `main.toc':
+(rerunfilecheck)             Before: 12317959B2F51C64422E67B502B41F33;1296
+(rerunfilecheck)             After:  1ED75263529771BAB474CE27741FD19E;1297.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
@@ -2126,26 +2252,31 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39364 strings out of 494413
+ 39539 strings out of 494413
  100000,1648299 words of node,token memory allocated
- 580 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 6 attribute, 76 glue_spec, 6 attrib
-ute_list, 1 write nodes
-   avail lists: 1:4,2:260,3:72,4:16,5:117,6:19,7:1475,8:15,9:67,10:12,11:179
- 42448 multiletter control sequences out of 65536+600000
- 92 fonts using 22083835 bytes
- 61i,6n,107p,9101b,3123s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 753 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 48 attribute, 77 glue_spec, 48 attr
+ibute_list, 1 write nodes
+   avail lists: 1:4,2:540,3:195,4:26,5:297,6:29,7:3844,8:149,9:378,10:14,11:370
+ 42540 multiletter control sequences out of 65536+600000
+ 103 fonts using 24699267 bytes
+ 61i,9n,107p,9101b,3127s stack positions out of 5000i,500n,10000p,200000b,100000s
+
+warning  (pdf backend): unreferenced destination with name 'section*.9'
 <c:/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/te
 xlive/2018/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/tex
-live/2018/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/201
-8/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2018/tex
-mf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/texlive/2018/texmf-di
-st/fonts/opentype/public/lm/lmsans10-bold.otf><c:/texlive/2018/texmf-dist/fonts/
-opentype/public/lm/lmroman12-bold.otf>
-Output written on main.pdf (9 pages, 107205 bytes).
+live/2018/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2
+018/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/20
+18/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2018/texmf
+-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2018/texmf-
+dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2018/texmf-dist/
+fonts/opentype/public/lm/lmroman12-regular.otf><c:/texlive/2018/texmf-dist/fonts
+/opentype/public/lm/lmsans10-bold.otf><c:/texlive/2018/texmf-dist/fonts/opentype
+/public/lm/lmroman12-bold.otf>
+Output written on main.pdf (17 pages, 462572 bytes).
 
-PDF statistics: 157 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 131072)
- 73 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 321 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 131072)
+ 113 words of extra memory for PDF output out of 10000 (max. 100000000)
 
