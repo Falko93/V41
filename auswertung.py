@@ -12,12 +12,16 @@ from scipy.stats import sem
 from scipy import integrate
 
 
-lambda_1 = 1.5417e-10
-Radius_k = 5.73 #in cm
+lambda_1 = 1.5417e-10 # in m
+Radius_k = 0.0573 #in m
 radius_rohr = 0.4e-3
+Abstand_FP = 0.130 # in m -> Abstand Fokus Probe
+ 
 
-
-radius_m = np.array([4.5, 6.25, 8.2, 9.8, 11.5]) # Radius der Kreibögen in cm für Metall
+# radius_m = np.array([4.5, 6.25, 8.2, 9.8, 11.5]) # Radius der Kreibögen in cm für Metall
+radius_m = np.array([0.045, 0.0625, 0.082, 0.098, 0.115]) # Radius der Kreibögen in m für Metall
+radius_s = np.array([0.027, 0.032, 0.056, 0.06, 0.062, 0.079, 0.095, 0.103, 0.112, 0.114, 0.125, 0.129, 0.14, 0.15, 0.154, 0.164]) # Radius der Kreibögen in m für Salz -> 9.5, 12.5, 12.9 und 15.4 cm scheint mit Ring zu sein..
+Fehler_radius = 0.001 # in m
 
 ### Nicht verschwindende Reflexe werden mit der Strukturamplitude berechnet. Es werden alle hkl Kombinationen von 100 bis 999 betrachtet wobei daruf geachtet wird, dass m = h^2 + k^2+ l^2 sich nicht doppelt.
 
@@ -97,11 +101,25 @@ def main():
 	gitter_moegl = ['SC','FCC','BCC','Diamant']
 	Xi2_best = ['SC', 10]
 
-	######################## Metall ##########################
+	####################################################################################################
+	# Metall 
+	####################################################################################################
+	print('\n#################### Analyse für Metall ####################\n')
+	# print('\n')
+
 	#Bogenlängenformel b=alpha*r*pi /180
 	theta_4 = radius_m * 180 / (np.pi * Radius_k)
 	theta = theta_4 * np.pi / (4 * 180) # in radianten
 	theta_sin = np.sin(theta)
+
+	# hier für die Fehlerfortpfalnzung aufgrund der ungenauigkeit des Lineals
+	radius_metall = unp.uarray(radius_m, Fehler_radius)
+	Radius_kamera = ufloat(Radius_k, 0.0)
+	theta_4_unp = radius_metall * 180 / (np.pi * Radius_kamera)
+	theta_unp = theta_4_unp * np.pi / (4 * 180) # in radianten
+
+	print('Theta mit Fehler: ', theta_unp)
+	
 	netzebenenabstand_metall = bragg(lambda_1, theta)
 
 	for gitter in gitter_moegl:
@@ -128,24 +146,61 @@ def main():
 
 	print('Gitterkonstanten für ' + Xi2_best[0] + ' Struktur: ', a)
 
+	# linearer fit für a gegen cos^2
 	params, cov = curve_fit(lin,np.cos(theta)**2,a)
+	# params, cov = curve_fit(lin,np.cos(theta),a)
 	err = np.sqrt(np.diag(cov))
 
 	a_extrp = ufloat(params[1], err[1])
+
+	# systematischer Fehler Absorption der Röntgenstrahlung
+
+	DeltaA = (radius_rohr / (2 * Radius_k)) * (1 - Radius_k / Abstand_FP) * (np.cos(theta)**2 / theta) * a
+	# cos2Theta = []
+	# for i in range(0,len(theta)):
+	# 	cos2Theta.append(ufloat(theta[i], Fehler_Theta[i]))
+	cos2Theta = unp.cos(theta_unp)**2
+
+	a_mitFehler = unp.uarray(a, DeltaA)
+	print('Gitterkonstanten mit Fehler durch die Absorption: ', a_mitFehler)
 
 	print('Extrapolierte Gitterkonstante: ', a_extrp)
 
 	cos2Theta_fit = np.linspace(0, 1)
 
-	plt.plot(np.cos(theta)**2, a, 'x', label = 'Daten')
+	####### ab hier der a gegen cos^2 Plot ########
+	# plt.plot(np.cos(theta)**2, a, 'x', label = 'Daten')
+	plt.errorbar(np.cos(theta)**2, a, xerr=stds(cos2Theta), yerr=DeltaA, fmt='x', label = 'Daten')
+	# plt.plot(np.cos(theta), a, 'x', label = 'Daten')
 	plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *params), label = 'Fit')
 	plt.legend(loc = 'best')
 	plt.xlabel('cos$^2(\Theta)$')
 	plt.ylabel('$a$ in Angtröm')
 	plt.xlim(0.6,1)
+	plt.ylim(4.8e-10,5.8e-10)
 	plt.tight_layout()
 	plt.grid()
 	plt.savefig('Plots/Metall_Fit.pdf')
+
+	####################################################################################################
+	# Salz 
+	####################################################################################################
+	print('\n#################### Analyse für Salz ####################\n')
+
+	#Bogenlängenformel b=alpha*r*pi /180
+	theta_4 = radius_s * 180 / (np.pi * Radius_k)
+	theta = theta_4 * np.pi / (4 * 180) # in radianten
+	theta_sin = np.sin(theta)
+
+	# hier für die Fehlerfortpfalnzung aufgrund der ungenauigkeit des Lineals
+	radius_salz = unp.uarray(radius_s, Fehler_radius)
+	Radius_kamera = ufloat(Radius_k, 0.0)
+	theta_4_unp = radius_salz * 180 / (np.pi * Radius_kamera)
+	theta_unp = theta_4_unp * np.pi / (4 * 180) # in radianten
+
+	print('Theta mit Fehler: ', theta_unp)
+	
+	netzebenenabstand_metall = bragg(lambda_1, theta)
 
 
 main()
