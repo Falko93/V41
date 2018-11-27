@@ -1,2 +1,56 @@
 ﻿\section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Systematische Fehler}
+Als Erstes ist darauf hinzuweisen, dass durch den Versuchsaufbau zwei systematische Fehler gemacht werden, die wie folgt in die Auswertung einfließen.
+Die Systematischen Fehler entstehen bei den Ringradien. 
+Dabei entsteht der Eindruck, dass die Gitterkonstante a abhängig von dem Beugungswinkel $\theta$ ist. \\
+Der erste systematische Fehler liegt in der Messung von dem 4 $\theta$-Winkel, der stets zu groß gemessen wird. 
+Problematisch ist das so kleine Winkel große Fehler besitzen. 
+in Abbildung \ref{fig:sys1} wird schematisch gezeigt, wie das wahre $\theta$ aussehen sollte.
+\begin{figure}
+\centering
+	\includegraphics[width = 0.5\textwidth]{Abbildungen/Syst1.png}
+	\caption{Darstellung des systematischen Fehlers, der aus der Absorbtion innerhalb des Probenstäbchens entsteht \cite{Anleitung}.}
+	\label{fig:sys1}
+\end{figure} 
+Das Problem liegt darin, dass der Großteil der Strahlung komplett absorbiert wird und nur am Rand Beugungseffekte entstehen die aus der Probe kommen.
+Berücksichtigt wird dies durch die Korrektur $\Delta a_A$ nach Bradley und Jay in Gleichung \ref{eq:syst1}.
+\begin{equation}
+\frac{\Delta a_A}{\text{a}} = \frac{\rho}{2\text{R}}\left( 1-\frac{\text{R}}{\text{F}} \right)\frac{\cos^2{\theta}}{\theta}
+\label{eq:syst1}
+\end{equation}
+Der Größen sind in der Abbildung \ref{fig:sys1} dargestellt. 
+$\rho$ ist der Radius des Probenstäbchens, R der Kameraradius und F der Abstand zwischen Fokus und Probe.
+Dieser Fehler führt in dem Plot von $a(\theta)$ gegen $\cos^2{\theta}$ zu den Fehlerbalken in a.
+\\\\
+Der Zweite Systematische Fehler resultiert aus der Geometrie des Aufbaus.
+In der Regel sind die Achse des Probenzylinders und die Achse des Films leicht gegeneinander verschoben. 
+Das ist in Abbildung \ref{fig:sys2} dargestellt.
+\begin{figure}
+\centering
+	\includegraphics[width = 0.5\textwidth]{Abbildungen/Syst2.png}
+	\caption{\cite{Anleitung}.}
+	\label{fig:sys2}
+\end{figure}
+Dieser Fehler wirkt sich wieder auf das gemessene $\theta$ aus und ergibt die Abweichung $\Delta \theta$ wie in Gleichung \ref{eq:syst2} aufgeführt ist.
+Der Abstand $\Delta$S und die Verschiebung v sind aus der Skizze \ref{fig:sys2} zu entnehmen.
+\begin{align*}
+\Delta \text{S} &  = -\text{v} \sin{2 \theta} \\
+\Delta \theta & = -\frac{\Delta \text{S}}{2\text{R}}
+\end{align*}
+\begin{equation}
+\Delta \theta = \frac{\text{v}}{2\text{R}}\sin{2\theta} = \frac{\text{v}}{\text{R}}\cos{\theta}\sin{\theta}
+\label{eq:syst2}
+\end{equation}
+Unter Berücksichtigung der differnzierten Bragg-Bedingung ergibt sich der Korrekturterm $\Delta a_v$ in Gleichung \ref{eq:system} aus
+\begin{align*}
+\frac{\Delta \text{a}}{\text{a}} = \frac{\Delta \text{d}}{\text{d}} = -\Delta \theta \frac{\cos{\theta}}{\sin{\theta}}.
+\end{align*}
+\begin{equation}
+\frac{\Delta a_v}{\text{a}} = \frac{\text{v}}{\text{R}}\cos^2{\theta}
+\label{eq:system}
+\end{equation}
+Das heißt, die Gesamte Abweichung der Gitterkonstante resultiert in $\Delta a_{ges}$, welche as der Summe der beiden systematischen Fehler $\Delta a_A$ und $\Delta a_v$. 
+Dabei ist die Gitterkonstante $\Delta a_{ges}$ proportional zu $\cos2{\theta}$.\\
+Die tatsächliche Gitterkonstante a ist deshalb aus dem y-Achsenabschnitt des Plots $a(\theta)$ gegen $\cos^2{\theta}$ zu entnehmen.
+\subsection{Metall}
