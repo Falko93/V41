@@ -126,6 +126,7 @@ def main():
 	print('radius', radius())
 
 	Xi2_best = ['SC', 20] # SC ist in dem Fall ein Platzhalter. Die 20 garantiert, dass ein jedes Xi zunächst kleiner ist.
+	reflexe_best = []
 
 	theta = theta_radiant(radius())
 	print('Theta mit Fehler: ', theta)
@@ -149,10 +150,18 @@ def main():
 
 		if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 			Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d)]
+			reflexe_best = reflexe
 
 	print('Struktur mit der kleinsten Abweichung: ', Xi2_best[0])
 	print('Abweichung Xi^2: ', Xi2_best[1])
+<<<<<<< 7dab58777c05f2e7d13ed2b89e237a28974216f2
 
+||||||| merged common ancestors
+		
+=======
+	print('Die hkl Ebenen: ', reflexe_best)
+		
+>>>>>>> Ein bisschen an der Auswertung getexet
 	m = Strukturamplitude(gitter = Xi2_best[0])[1]
 	a = np.array(gitterkonstanteBragg(m, netzebenenabstand))
 
