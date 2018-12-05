@@ -145,7 +145,7 @@ def main():
 	for gitter in gitter_moegl:
 		infos = Strukturamplitude(gitter = gitter)
 		reflexe = np.array(infos[0])
-		print(gitter +': ',reflexe[np.argsort(infos[1])])
+		# print(gitter +': ',reflexe[np.argsort(infos[1])])
 		m = infos[1]
 		m = np.sort(m)
 
