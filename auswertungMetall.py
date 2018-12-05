@@ -12,7 +12,7 @@ from scipy.stats import sem
 from scipy import integrate
 
 ####################################################################################################
-# alle Konstanten werden hier definiert 
+# alle Konstanten werden hier definiert
 ####################################################################################################
 
 lambda_1 = 1.5417e-10 # in m
@@ -105,12 +105,13 @@ def lin(x, a, b):
 def theta_radiant(radius): # diese Funktion gibt einen uarray raus in dem Theta steht; umgerechnet aus dem gemessenen Radius
 	radius_unp = unp.uarray(radius, Fehler_radius)
 	theta = radius_unp / (4*Radius_kamera)
-	
+
 	return np.sort(theta) # in radianten + Fehler
 
 def radius():
 	radius_vorne, radius_rueck = np.genfromtxt('MetallRadius.txt', unpack = True) # das ist ein 2D array, der in der ersten Spalte die Radien weg von der Röntgenquelle hat und in der zweiten zur Röntgenquelle
 	radius_rueck = umfang_kamera - radius_rueck
+	radius_rueck = radius_rueck[::-1]
 	radius = np.concatenate((radius_vorne, radius_rueck), axis = 0)
 
 	return radius
@@ -122,6 +123,7 @@ def radius():
 def main():
 
 	print('\n#################### Analyse für Metall ####################\n')
+	print('radius', radius())
 
 	Xi2_best = ['SC', 20] # SC ist in dem Fall ein Platzhalter. Die 20 garantiert, dass ein jedes Xi zunächst kleiner ist.
 
@@ -133,14 +135,14 @@ def main():
 		infos = Strukturamplitude(gitter = gitter)
 		reflexe = infos[0]
 		m = infos[1]
-	
+
 		verhaeltnisse = findStructure(m, netzebenenabstand)
 		verhaeltnis_m = np.sort(verhaeltnisse[0])
 		verhaeltnis_d = np.sort(verhaeltnisse[1])
 
 		print('sqrt(m_i/m_1): ', verhaeltnis_m)
 		print('m_1/m_i: ', verhaeltnis_d)
-	
+
 		print('Verhältnisse für die m Werte: ', verhaeltnis_m)
 		print('Verhältnisse für die d Werte: ', verhaeltnis_d)
 		print('Abweichung Xi^2 für die ' + gitter + ' Sturktur: ', abweichung(verhaeltnis_m, verhaeltnis_d))
@@ -150,7 +152,7 @@ def main():
 
 	print('Struktur mit der kleinsten Abweichung: ', Xi2_best[0])
 	print('Abweichung Xi^2: ', Xi2_best[1])
-		
+
 	m = Strukturamplitude(gitter = Xi2_best[0])[1]
 	a = np.array(gitterkonstanteBragg(m, netzebenenabstand))
 
@@ -200,17 +202,3 @@ def main():
 	plt.close()
 
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-

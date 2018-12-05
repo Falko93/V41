@@ -1,0 +1,16 @@
+# millerindex m/m1  d1/d  Art
+100 1.00 1.00 stark
+110 1.41 1.39 stark
+111 1.73 1.66 stark
+200 2.00 1.94 schwach
+210 2.23 2.14 stark
+211 2.44 2.51 stark
+220 2.82 3.12 schwach
+221 3.00 3.23 stark
+310 3.16 3.38 schwach
+311 3.31 3.49 stark
+222 3.46 3.63 schwach
+320 3.60 3.72 stark
+321 3.74 3.87 stark
+400 4.00 3.98 schwach
+322 4.12 4.09 stark
