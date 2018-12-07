@@ -117,7 +117,16 @@ def main():
 
 
     print('\n#################### Analyse für Salz ####################\n')
-    theta = theta_radiant(radius())
+
+    daten1, daten2 = np.genfromtxt('SalzRadius.txt', unpack=True)
+    daten = np.append(daten1, daten2)
+    daten = daten[daten != 0]
+    daten = (daten * np.pi) / (360)
+
+    print('Daten: ', daten)
+
+    # theta = theta_radiant(radius())
+    theta = daten
     print('Theta mit Fehler: ', theta)
     netzebenenabstand = bragg(lambda_1, noms(theta))
     print('Netzebenenabstand', netzebenenabstand)
