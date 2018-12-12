@@ -68,7 +68,7 @@ def Strukturamplitude(f = 1, gitter = 'SC'): # gitter = 'SC', 'BCC', 'FCC', 'Dia
 	return infos
 
 def bragg(lambdaa, theta):
-    return lambdaa / (2 * np.sin(theta))
+    return lambdaa / (2 * unp.sin(theta))
 
 def findStructure(m, d):
 	verhaeltnis_m = []
@@ -126,8 +126,10 @@ def main():
 	print('radius', radius())
 
 	Xi2_best = ['SC', 20] # SC ist in dem Fall ein Platzhalter. Die 20 garantiert, dass ein jedes Xi zunächst kleiner ist.
-	
+	Xi_Fehler = ['SC', 20]
+
 	daten = np.array([44.5, 64.5, 81.5, 98.5, 114.5, 134.5])
+	daten = unp.uarray(daten, 1)
 	daten = (daten * np.pi) / (360)
 	
 	# theta = theta_radiant(radius())
@@ -174,10 +176,27 @@ def main():
 		if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 			Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d)]
 
+		
+		infos = Strukturamplitude(gitter = gitter)
+		reflexe = np.array(infos[0])
+		m = infos[1]
+		m = np.sort(m)
+		netzebenenabstand_Fehler = bragg(lambda_1, theta)
+		verhaeltnisse_Fehler = findStructure(m, netzebenenabstand_Fehler)
+		verhaeltnis_m_Fehler = verhaeltnisse_Fehler[0]
+		verhaeltnis_d_Fehler = np.sort(verhaeltnisse_Fehler[1])
+
+		print('Abweichung Xi^2 Fehler für die ' + gitter + ' Sturktur: ', abweichung(verhaeltnis_m_Fehler, verhaeltnis_d_Fehler))
+
+		if abweichung(verhaeltnis_m_Fehler, verhaeltnis_d_Fehler) < Xi_Fehler[1]:
+			Xi_Fehler = [gitter, abweichung(verhaeltnis_m_Fehler, verhaeltnis_d_Fehler)]
+
 	print('Struktur mit der kleinsten Abweichung: ', Xi2_best[0])
 	print('Abweichung Xi^2: ', Xi2_best[1])
+	print('Abweichung Xi^2 Fehler: ', Xi_Fehler[1])
 
-	m = Strukturamplitude(gitter = Xi2_best[0])[1]
+	# m = Strukturamplitude(gitter = Xi2_best[0])[1]
+	m = Strukturamplitude(gitter = 'BCC')[1]
 	a = np.array(gitterkonstanteBragg(m, netzebenenabstand))
 
 	print('Gitterkonstanten für ' + Xi2_best[0] + ' Struktur: ', a)
@@ -231,15 +250,15 @@ def main():
 	for j in range(0,len(daten)):	
 		verhaeltnisse_daten.append(unp.sin(daten[j]) / unp.sin(daten[0]))
 
-	plt.plot(i, reflexe_SC, 'o', label = 'SC')
-	plt.plot(i, reflexe_FCC, 'o', label = 'FCC')
-	plt.plot(i, reflexe_BCC, 'o', label = 'BCC')
+	plt.plot(i, reflexe_SC, 'v', label = 'SC')
+	plt.plot(i, reflexe_FCC, 's', label = 'FCC')
+	plt.plot(i, reflexe_BCC, '^', label = 'BCC')
 	plt.plot(i, reflexe_Diamant, 'o', label = 'Diamant')
-	plt.plot(i, noms(verhaeltnisse_daten), 'x', label = 'data')
+	plt.plot(i, noms(verhaeltnisse_daten), '<', label = 'data')
 	plt.xlabel('i')
 	plt.xlim(0,7)
 	plt.ylim(0,4)
-	plt.ylabel('verhältnisse')
+	plt.ylabel(r'$\frac{m_i}{m_1}$')
 	plt.legend(loc = 'best')
 	plt.tight_layout()
 	plt.grid()

@@ -138,6 +138,86 @@ def gitterkonstanteBragg(m, d):
 
 	return a
 
+def formfaktor(ion): # ion = 'F', 'Cl', 'K', 'Ca', 'Cu', 'J' oder 'Cs' 
+	txtDatei = 'atomfaktoren.txt'
+	formfaktor = np.genfromtxt(txtDatei , unpack = True)
+	index_formfaktor = 0
+	if ion == 'F':
+		index_formfaktor = 0
+	elif ion == 'Cl':
+		index_formfaktor = 1
+	elif ion == 'K':
+		index_formfaktor = 2
+	elif ion == 'Ca':
+		index_formfaktor = 3
+	elif ion == 'Cu':
+		index_formfaktor = 4
+	elif ion == 'J':
+		index_formfaktor = 5
+	elif ion == 'Cs':
+		index_formfaktor = 6
+
+	output = formfaktor[index_formfaktor][0]
+	return output
+
+def fit(Xi2_best, netzebenenabstand, theta):
+	ff1 = 1
+	ff2 = 1
+	if Xi2_best[2] == 'KF':
+		ff1 = formfaktor('K')
+		ff2 = formfaktor('F')
+	elif Xi2_best[2] == 'KCl':
+		ff1 = formfaktor('K')
+		ff2 = formfaktor('Cl')
+	elif Xi2_best[2] == 'CuF':
+		ff1 = formfaktor('Cu')
+		ff2 = formfaktor('F')
+	elif Xi2_best[2] == 'CuCl':
+		ff1 = formfaktor('Cu')
+		ff2 = formfaktor('Cl')
+	elif Xi2_best[2] == 'CsJ':
+		ff1 = formfaktor('Cs')
+		ff2 = formfaktor('J')
+	elif Xi2_best[2] == 'CaF':
+		ff1 = formfaktor('Ca')
+		ff2 = formfaktor('F')
+	elif Xi2_best[2] == 'CaCl':
+		ff1 = formfaktor('Ca')
+		ff2 = formfaktor('Cl')
+	print('Struktur mit der kleinsten Abweichung: ', Xi2_best[0], ' für ', Xi2_best[2])
+	print('Abweichung Xi^2: ', Xi2_best[1])
+
+	# m = Strukturamplitude_Salz(54, 54,gitter = Xi2_best[0])[1]
+	m = Strukturamplitude_Salz(ff1, ff2,gitter = 'Steinsalz')[1]
+	a = np.array(gitterkonstanteBragg(m, netzebenenabstand))
+
+	print('Gitterkonstanten für ' + Xi2_best[0] + ' Struktur: ', ' für ', Xi2_best[2], a)
+
+	####################################################################################################
+	# Systematischer Fehler
+	####################################################################################################
+
+	# systematischer Fehler Absorption der Röntgenstrahlung
+
+	DeltaA = (radius_rohr / (2 * Radius_kamera)) * (1 - Radius_kamera / Abstand_FP) * (np.cos(noms(theta))**2 / noms(theta)) * a
+
+	a_mitFehler = unp.uarray(a, DeltaA)
+	print('Gitterkonstanten mit Fehler durch die Absorption: ', a_mitFehler)
+
+	####################################################################################################
+	# curve_fit zeugs
+	####################################################################################################
+
+
+	# linearer fit für a gegen cos^2
+	# params, cov = curve_fit(lin,np.cos(noms(theta))**2,noms(a_mitFehler), sigma = stds(a_mitFehler))
+	params, cov = curve_fit(lin,np.cos(noms(theta))**2,noms(a_mitFehler))
+	err = np.sqrt(np.diag(cov))
+	a_extrp = ufloat(params[1], err[1])
+	print('Extrapolierte Gitterkonstante: ', a_extrp)
+
+	return [a, DeltaA, params]
+
 ####################################################################################################
 # Allgemeine Funktionen
 ####################################################################################################
@@ -168,16 +248,21 @@ def main():
 	print('\n#################### Analyse für Salz ####################\n')
 
 	Xi2_best = ['SC', 20, 'CuF'] # SC ist in dem Fall ein Platzhalter. Die 20 garantiert, dass ein jedes Xi zunächst kleiner ist.
+	Xi2_best_Rest = []
 
 	# daten1, daten2 = np.genfromtxt('SalzRadius.txt', unpack=True)
 	# daten = np.array([23, 34.50, 41, 43, 51, 57, 58.5, 65, 70, 78, 83, 84.5, 90,95.5, 103, 108,110,116, 123, 133, 116 +43])
-	daten = np.array([23, 34.50, 43, 51, 57, 65, 78, 83, 90,95.5, 103, 108, 123, 133, 116 +43])
+	daten = np.array([23, 34.50, 43, 51, 57, 65, 78, 83, 90,95.5, 103, 108,116, 133])
+	# daten = np.array([23, 34.50, 43, 51, 57, 65, 78, 83, 90,95.5, 103, 108,116, 133]) #Ansatz !!!!!!!
+	# daten = np.array([23, 34.50, 43, 51, 57, 65, 78, 83, 90,95.5, 103, 108, 123, 133, 116 +43]) #Ansatz 1 für Steinsalz
 	# daten = np.array([23, 34.50, 43, 51, 57, 65, 78, 83,95.5, 103, 108, 123, 133, 116 +43]) #9. raus
 
 	# maske = [True,True,False,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True,True]
 	# daten = daten[maske]
 	daten = daten + 4.5
+	print('Daten in mm: ', daten)
 	# daten = daten[daten != 0]
+	daten = unp.uarray(daten, 1)
 	daten = (daten * np.pi) / (360)
 
 	print('Daten: ', daten)
@@ -185,7 +270,7 @@ def main():
 	# theta = theta_radiant(radius())
 	theta = daten
 
-	print('Theta mit Fehler: ', theta)
+	print('Theta mit Fehler: ', np.round(noms(theta),3), '+/-', np.round(stds(theta),3))
 	netzebenenabstand = bragg(lambda_1, noms(theta))
 
 	reflexe_Zinkblende = []
@@ -230,6 +315,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 
 			############## CuCl ##################
 
@@ -265,6 +352,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 		elif gitter == 'Steinsalz':
 			############## KF ##################
 			argg = 'KF'
@@ -299,6 +388,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 
 			############## KCl ##################
 
@@ -334,6 +425,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 		elif gitter == 'Caesiumchlorid':
 			############## CsJ ##################
 			argg = 'CsJ'
@@ -368,6 +461,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 
 			############## CsCl ################## -> könnte komisch sein
 
@@ -403,6 +498,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 		elif gitter == 'Fluorit':
 			############## CaF ##################
 			argg = 'CaF'
@@ -437,6 +534,8 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 
 			############## CaCl ################## -> könnte komisch sein
 
@@ -472,12 +571,19 @@ def main():
 	
 			if abweichung(verhaeltnis_m, verhaeltnis_d) < Xi2_best[1]:
 				Xi2_best = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
+			elif abweichung(verhaeltnis_m, verhaeltnis_d) == Xi2_best[1]:
+				Xi2_best_Rest = [gitter, abweichung(verhaeltnis_m, verhaeltnis_d), argg]
 
+	# if Xi2_best[2] == 'KF':
+	# 	print('Struktur mit der kleinsten Abweichung: ', Xi2_best[0], ' für ', Xi2_best[2])
+	# 	print('Abweichung Xi^2: ', Xi2_best[1])		
 
+	# fit(Xi2_best, netzebenenabstand, theta)
 	print('Struktur mit der kleinsten Abweichung: ', Xi2_best[0], ' für ', Xi2_best[2])
 	print('Abweichung Xi^2: ', Xi2_best[1])
 
-	m = Strukturamplitude_Salz(18, 18,gitter = Xi2_best[0])[1]
+	m = Strukturamplitude_Salz(54, 54,gitter = Xi2_best[0])[1]
+	# m = Strukturamplitude_Salz(18, 18,gitter = 'Steinsalz')[1]
 	a = np.array(gitterkonstanteBragg(m, netzebenenabstand))
 
 	print('Gitterkonstanten für ' + Xi2_best[0] + ' Struktur: ', ' für ', Xi2_best[2], a)
@@ -508,13 +614,14 @@ def main():
 	####################################################################################################
 	# Plots
 	####################################################################################################
-
 	cos2Theta = unp.cos(theta)**2
 	cos2Theta_fit = np.linspace(0, 1)
 
 	####### ab hier der a gegen cos^2 Plot ########
+	# plt.errorbar(np.cos(noms(theta))**2, a, xerr=stds(cos2Theta), yerr=DeltaA, fmt='x', label = 'Daten')
 	plt.errorbar(np.cos(noms(theta))**2, a, xerr=stds(cos2Theta), yerr=DeltaA, fmt='x', label = 'Daten')
-	plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *params), label = 'Fit')
+	# plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *params), label = 'Fit')
+	plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *params), label = 'Fit ' + Xi2_best[2])
 	plt.legend(loc = 'best')
 	plt.xlabel('cos$^2(\Theta)$')
 	plt.ylabel('$a$ in Angtröm')
@@ -531,20 +638,100 @@ def main():
 	for j in range(0,len(daten)):	
 		verhaeltnisse_daten.append(unp.sin(daten[j]) / unp.sin(daten[0]))
 
-	plt.plot(i, reflexe_Zinkblende, 'x', label = 'Zinkblende')
-	plt.plot(i, reflexe_Steinsalz, 'x', label = 'Steinsalz')
-	plt.plot(i, reflexe_Caesiumchlorid, 'x', label = 'Caesiumchlorid')
-	plt.plot(i, reflexe_Fluorit, 'o', label = 'Fluorit')
-	plt.plot(i, noms(verhaeltnisse_daten), 'x', label = 'data')
+	plt.plot(i, reflexe_Zinkblende, '<', label = 'Zinkblende')
+	plt.plot(i, reflexe_Steinsalz, 'v', label = 'Steinsalz')
+	plt.plot(i, reflexe_Caesiumchlorid, '^', label = 'Caesiumchlorid')
+	plt.plot(i, reflexe_Fluorit, '>', label = 'Fluorit')
+	plt.plot(i, noms(verhaeltnisse_daten), 's', label = 'data ' + Xi2_best[2])
 	plt.xlabel('i')
-	# plt.xlim(0,7)
-	# plt.ylim(0,4.5)
-	plt.ylabel('verhältnisse')
+	plt.xlim(0,15)
+	plt.ylim(0.5,4.5)
+	plt.ylabel(r'$\frac{m_i}{m_1}$')
 	plt.legend(loc = 'best')
 	plt.tight_layout()
 	plt.grid()
 	plt.savefig('Plots/verhaeltnisse_Salz.pdf')
 	plt.close()
+
+	# cos2Theta = unp.cos(theta)**2
+	# cos2Theta_fit = np.linspace(0, 1)
+
+	# ####### ab hier der a gegen cos^2 Plot ########
+	# # plt.errorbar(np.cos(noms(theta))**2, a, xerr=stds(cos2Theta), yerr=DeltaA, fmt='x', label = 'Daten')
+	# plt.errorbar(np.cos(noms(theta))**2, fit(Xi2_best, netzebenenabstand, theta)[0], xerr=stds(cos2Theta), yerr=fit(Xi2_best, netzebenenabstand, theta)[1], fmt='x', label = 'Daten')
+	# # plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *params), label = 'Fit')
+	# plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *fit(Xi2_best, netzebenenabstand, theta)[2]), label = 'Fit' + Xi2_best[2])
+	# plt.legend(loc = 'best')
+	# plt.xlabel('cos$^2(\Theta)$')
+	# plt.ylabel('$a$ in Angtröm')
+	# # plt.xlim(0.6,1)
+	# # plt.ylim(4.8e-10,5.8e-10)
+	# plt.tight_layout()
+	# plt.grid()
+	# plt.savefig('Plots/Salz_Fit_Egor.pdf')
+	# plt.close()
+
+	# i = np.linspace(1,len(daten),len(daten))
+
+	# verhaeltnisse_daten = []
+	# for j in range(0,len(daten)):	
+	# 	verhaeltnisse_daten.append(unp.sin(daten[j]) / unp.sin(daten[0]))
+
+	# plt.plot(i, reflexe_Zinkblende, 'x', label = 'Zinkblende')
+	# plt.plot(i, reflexe_Steinsalz, 'x', label = 'Steinsalz')
+	# plt.plot(i, reflexe_Caesiumchlorid, 'x', label = 'Caesiumchlorid')
+	# plt.plot(i, reflexe_Fluorit, 'o', label = 'Fluorit')
+	# plt.plot(i, noms(verhaeltnisse_daten), 'x', label = 'data' + Xi2_best[2])
+	# plt.xlabel('i')
+	# # plt.xlim(0,7)
+	# # plt.ylim(0,4.5)
+	# plt.ylabel('verhältnisse')
+	# plt.legend(loc = 'best')
+	# plt.tight_layout()
+	# plt.grid()
+	# plt.savefig('Plots/verhaeltnisse_Salz.pdf')
+	# plt.close()
+
+	# fit(Xi2_best_Rest, netzebenenabstand, theta)
+
+	# cos2Theta = unp.cos(theta)**2
+	# cos2Theta_fit = np.linspace(0, 1)
+
+	# ####### ab hier der a gegen cos^2 Plot ########
+	# # plt.errorbar(np.cos(noms(theta))**2, a, xerr=stds(cos2Theta), yerr=DeltaA, fmt='x', label = 'Daten')
+	# plt.errorbar(np.cos(noms(theta))**2, fit(Xi2_best_Rest, netzebenenabstand, theta)[0], xerr=stds(cos2Theta), yerr=fit(Xi2_best_Rest, netzebenenabstand, theta)[1], fmt='x', label = 'Daten')
+	# # plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *params), label = 'Fit')
+	# plt.plot(cos2Theta_fit, lin(cos2Theta_fit, *fit(Xi2_best_Rest, netzebenenabstand, theta)[2]), label = 'Fit' + Xi2_best_Rest[2])
+	# plt.legend(loc = 'best')
+	# plt.xlabel('cos$^2(\Theta)$')
+	# plt.ylabel('$a$ in Angtröm')
+	# # plt.xlim(0.6,1)
+	# # plt.ylim(4.8e-10,5.8e-10)
+	# plt.tight_layout()
+	# plt.grid()
+	# plt.savefig('Plots/Salz_Fit_Egor_Second.pdf')
+	# plt.close()
+
+	# i = np.linspace(1,len(daten),len(daten))
+
+	# verhaeltnisse_daten = []
+	# for j in range(0,len(daten)):	
+	# 	verhaeltnisse_daten.append(unp.sin(daten[j]) / unp.sin(daten[0]))
+
+	# plt.plot(i, reflexe_Zinkblende, 'x', label = 'Zinkblende')
+	# plt.plot(i, reflexe_Steinsalz, 'x', label = 'Steinsalz')
+	# plt.plot(i, reflexe_Caesiumchlorid, 'x', label = 'Caesiumchlorid')
+	# plt.plot(i, reflexe_Fluorit, 'o', label = 'Fluorit')
+	# plt.plot(i, noms(verhaeltnisse_daten), 'x', label = 'data' + Xi2_best_Rest[2])
+	# plt.xlabel('i')
+	# # plt.xlim(0,7)
+	# # plt.ylim(0,4.5)
+	# plt.ylabel('verhältnisse')
+	# plt.legend(loc = 'best')
+	# plt.tight_layout()
+	# plt.grid()
+	# plt.savefig('Plots/verhaeltnisse_Salz_Second.pdf')
+	# plt.close()
 
 main()
 

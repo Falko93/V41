@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.27)  5 DEC 2018 16:22
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.27)  7 DEC 2018 15:16
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -341,7 +341,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.174 seconds)
+luaotfload | main : initialization completed in 0.179 seconds)
 Lua module: fontspec 2016/02/01 2.5a Advanced font selection for LuaLaTeX.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
@@ -1828,6 +1828,55 @@ File: bkm-pdftex.def 2016/05/16 v1.25 bookmark driver for pdfTeX (HO)
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ncctools/extdash.sty
 Package: extdash 2005/01/29 v1.2 Extended Dash Package (NCC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
+\c@tracingmulticols=\count421
+\mult@box=\box57
+\multicol@leftmargin=\dimen261
+\c@unbalance=\count422
+\c@collectmore=\count423
+\doublecol@number=\count424
+\multicoltolerance=\count425
+\multicolpretolerance=\count426
+\full@width=\dimen262
+\page@free=\dimen263
+\premulticols=\dimen264
+\postmulticols=\dimen265
+\multicolsep=\skip100
+\multicolbaselineskip=\skip101
+\partial@page=\box58
+\last@line=\box59
+\maxbalancingoverflow=\dimen266
+\mult@rightbox=\box60
+\mult@grightbox=\box61
+\mult@gfirstbox=\box62
+\mult@firstbox=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\c@columnbadness=\count427
+\c@finalcolumnbadness=\count428
+\last@try=\dimen267
+\multicolovershoot=\dimen268
+\multicolundershoot=\dimen269
+\mult@nat@firstbox=\box81
+\colbreak@box=\box82
+\mc@col@check@num=\count429
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
@@ -1878,16 +1927,16 @@ LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count421
-\scratchdimen=\dimen261
-\scratchbox=\box57
-\nofMPsegments=\count422
-\nofMParguments=\count423
+\scratchcounter=\count430
+\scratchdimen=\dimen270
+\scratchbox=\box83
+\nofMPsegments=\count431
+\nofMParguments=\count432
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count424
-\MPscratchDim=\dimen262
-\MPnumerator=\count425
-\makeMPintoPDFobject=\count426
+\MPscratchCnt=\count433
+\MPscratchDim=\dimen271
+\MPnumerator=\count434
+\makeMPintoPDFobject=\count435
 \everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1938,25 +1987,25 @@ Package biblatex Info: Automatic encoding selection.
 
 \openout4 = main.bcf
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
-
-No file main.bbl.
+Package biblatex Info: ... file 'main.bbl' found.
+ (./build/main.bbl)
 Package biblatex Info: Reference section=0 on input line 15.
 Package biblatex Info: Reference segment=0 on input line 15.
-\AtBeginShipoutBox=\box58
+\AtBeginShipoutBox=\box84
 Package hyperref Info: Link coloring OFF on input line 15.
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count427
+\c@section@level=\count436
 )
 LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
-\c__siunitx_mathsf_int=\count428
+\c__siunitx_mathsf_int=\count437
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
 (Font)              scaled to size 10.95015pt on input line 15.
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
@@ -1979,7 +2028,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 15.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count429
+\c__siunitx_mathtt_int=\count438
 
 <logos/tu-logo.pdf, id=4, 339.2675pt x 55.20625pt>
 File: logos/tu-logo.pdf Graphic file (type pdf)
@@ -2019,40 +2068,26 @@ Language ngerman already loaded; id is 8)
 
 ] (./content/einleitung.tex)
 (./content/theorie.tex
-<Abbildungen/2dgitter.png, id=55, 754.017pt x 327.02174pt>
+<Abbildungen/2dgitter.png, id=61, 754.017pt x 327.02174pt>
 File: Abbildungen/2dgitter.png Graphic file (type png)
 
 <use Abbildungen/2dgitter.png>
 Package luatex.def Info: Abbildungen/2dgitter.png used on input line 11.
 (luatex.def)             Requested size: 418.25555pt x 181.39941pt.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 12.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 12.
-
+ [3<./Abbildungen/2dgitter.png>](compiling luc: /usr/local/texlive/2016/texmf-va
+r/luatex-cache/generic/fonts/otl/lmroman8-regular.luc)(load luc: /Users/Egor/Lib
+rary/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc)
 (compiling luc: /usr/local/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl
-/lmroman8-regular.luc)(load luc: /Users/Egor/Library/texlive/2016/texmf-var/luat
-ex-cache/generic/fonts/otl/lmroman8-regular.luc)(compiling luc: /usr/local/texli
-ve/2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc)(load luc:
- /Users/Egor/Library/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmrom
-an6-regular.luc)
-<Abbildungen/System.png, id=58, 645.00975pt x 478.1865pt>
+/lmroman6-regular.luc)(load luc: /Users/Egor/Library/texlive/2016/texmf-var/luat
+ex-cache/generic/fonts/otl/lmroman6-regular.luc) <Abbildungen/System.png, id=75
+, 645.00975pt x 478.1865pt>
 File: Abbildungen/System.png Graphic file (type png)
 
 <use Abbildungen/System.png>
 Package luatex.def Info: Abbildungen/System.png used on input line 29.
 (luatex.def)             Requested size: 418.25555pt x 310.08058pt.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 30.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 30.
-
-[3] [4<./Abbildungen/2dgitter.png><./Abbildungen/System.png>]
-<Abbildungen/raumzentriert.png, id=76, 329.43076pt x 248.72925pt>
+ [4<./Abbildungen/System.png>]
+<Abbildungen/raumzentriert.png, id=88, 329.43076pt x 248.72925pt>
 File: Abbildungen/raumzentriert.png Graphic file (type png)
 
 <use Abbildungen/raumzentriert.png>
@@ -2063,7 +2098,7 @@ LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
 (Font)              scaled to size 4.99992pt on input line 45.
 
-<Abbildungen/flaechenzentriert.png, id=77, 283.0575pt x 242.70676pt>
+<Abbildungen/flaechenzentriert.png, id=89, 283.0575pt x 242.70676pt>
 File: Abbildungen/flaechenzentriert.png Graphic file (type png)
 
 <use Abbildungen/flaechenzentriert.png>
@@ -2075,50 +2110,31 @@ Underfull \hbox (badness 3746) in paragraph at lines 49--49
 [][]|\EU2/lmr/m/n/10 Das kubisch-flächenzentrierte Git-ter
  []
 
-
-LaTeX Warning: Citation 'Anleitung' on page 5 undefined on input line 51.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 5 undefined on input line 51.
-
-<Abbildungen/hexagonal.png, id=79, 300.52275pt x 393.26926pt>
+<Abbildungen/hexagonal.png, id=93, 300.52275pt x 393.26926pt>
 File: Abbildungen/hexagonal.png Graphic file (type png)
 
 <use Abbildungen/hexagonal.png>
 Package luatex.def Info: Abbildungen/hexagonal.png used on input line 79.
 (luatex.def)             Requested size: 125.47794pt x 164.20583pt.
 
-
-LaTeX Warning: Citation 'Anleitung' on page 5 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 5 undefined on input line 80.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 61--84
 
  []
 
 [5<./Abbildungen/raumzentriert.png><./Abbildungen/flaechenzentriert.png>]
-<Abbildungen/miller.png, id=89, 308.95425pt x 218.0145pt>
+<Abbildungen/miller.png, id=105, 308.95425pt x 218.0145pt>
 File: Abbildungen/miller.png Graphic file (type png)
 
 <use Abbildungen/miller.png>
 Package luatex.def Info: Abbildungen/miller.png used on input line 93.
 (luatex.def)             Requested size: 188.21371pt x 132.81232pt.
 
-<Abbildungen/netzebene.png, id=90, 420.97275pt x 369.17924pt>
+<Abbildungen/netzebene.png, id=106, 420.97275pt x 369.17924pt>
 File: Abbildungen/netzebene.png Graphic file (type png)
 
 <use Abbildungen/netzebene.png>
 Package luatex.def Info: Abbildungen/netzebene.png used on input line 97.
 (luatex.def)             Requested size: 188.21371pt x 165.05318pt.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 6 undefined on input line 100.
-
-
-LaTeX Warning: Citation 'Anleitung' on page 6 undefined on input line 100.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2129,4 +2145,170 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--112
  []
 
 [6<./Abbildungen/hexagonal.png>] [7<./Abbildungen/miller.png><./Abbildungen/netz
-ebene.png>] <A
+ebene.png>] <Abbildungen/streuung.png, id=136, 283.65974pt x 174.05025pt>
+File: Abbildungen/streuung.png Graphic file (type png)
+
+<use Abbildungen/streuung.png>
+Package luatex.def Info: Abbildungen/streuung.png used on input line 157.
+(luatex.def)             Requested size: 188.21371pt x 115.48433pt.
+
+<Abbildungen/streuwinkel.png, id=137, 224.037pt x 237.2865pt>
+File: Abbildungen/streuwinkel.png Graphic file (type png)
+
+<use Abbildungen/streuwinkel.png>
+Package luatex.def Info: Abbildungen/streuwinkel.png used on input line 161.
+(luatex.def)             Requested size: 188.21371pt x 199.34825pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 197--203
+
+ []
+
+[9<./Abbildungen/streuung.png><./Abbildungen/streuwinkel.png>]
+<Abbildungen/bragg.png, id=171, 486.618pt x 349.305pt>
+File: Abbildungen/bragg.png Graphic file (type png)
+
+<use Abbildungen/bragg.png>
+Package luatex.def Info: Abbildungen/bragg.png used on input line 220.
+(luatex.def)             Requested size: 209.12778pt x 150.11827pt.
+ [10<./Abbildungen/bragg.png>]) [11]
+(./content/durchfuehrung.tex
+<Abbildungen/Aufbau.png, id=194, 565.51276pt x 423.984pt>
+File: Abbildungen/Aufbau.png Graphic file (type png)
+
+<use Abbildungen/Aufbau.png>
+Package luatex.def Info: Abbildungen/Aufbau.png used on input line 9.
+(luatex.def)             Requested size: 209.12778pt x 156.7875pt.
+ [12<./Abbildungen/Aufbau.png>]) [13]
+(./content/auswertung.tex [14]
+
+Package caption Warning: \label without proper reference on input line 177.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:verhaeltnisse' on page 15 undefined on input line 
+146.
+
+<Abbildungen/verhaeltnisse.pdf, id=228, 578.16pt x 433.62pt>
+File: Abbildungen/verhaeltnisse.pdf Graphic file (type pdf)
+
+<use Abbildungen/verhaeltnisse.pdf>
+Package luatex.def Info: Abbildungen/verhaeltnisse.pdf used on input line 167.
+(luatex.def)             Requested size: 188.21371pt x 141.1564pt.
+
+<Abbildungen/verhaeltnisse_Salz.pdf, id=229, 578.16pt x 433.62pt>
+File: Abbildungen/verhaeltnisse_Salz.pdf Graphic file (type pdf)
+
+<use Abbildungen/verhaeltnisse_Salz.pdf>
+Package luatex.def Info: Abbildungen/verhaeltnisse_Salz.pdf used on input line 1
+72.
+(luatex.def)             Requested size: 188.21371pt x 141.1564pt.
+
+<Abbildungen/formfaktoren.pdf, id=233, 1150.2975pt x 536.0025pt>
+File: Abbildungen/formfaktoren.pdf Graphic file (type pdf)
+
+<use Abbildungen/formfaktoren.pdf>
+Package luatex.def Info: Abbildungen/formfaktoren.pdf used on input line 183.
+(luatex.def)             Requested size: 376.42744pt x 175.40102pt.
+ [15]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Abbildungen/Syst1.png, id=245, 355.3275pt x 314.97675pt>
+File: Abbildungen/Syst1.png Graphic file (type png)
+
+<use Abbildungen/Syst1.png>
+Package luatex.def Info: Abbildungen/Syst1.png used on input line 198.
+(luatex.def)             Requested size: 209.12778pt x 185.38289pt.
+ [16<./Abbildungen/verhaeltnisse.pdf><./Abbildungen/verhaeltnisse_Salz.pdf>]
+<Abbildungen/Syst2.png, id=367, 304.7385pt x 289.08pt>
+File: Abbildungen/Syst2.png Graphic file (type png)
+
+<use Abbildungen/Syst2.png>
+Package luatex.def Info: Abbildungen/Syst2.png used on input line 217.
+(luatex.def)             Requested size: 209.12778pt x 198.3803pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--223
+
+ []
+
+[17<./Abbildungen/formfaktoren.pdf>] [18<./Abbildungen/Syst1.png><./Abbildungen/
+Syst2.png>] <Abbildungen/Metall_Fit.pdf, id=403, 578.16pt x 433.62pt>
+File: Abbildungen/Metall_Fit.pdf Graphic file (type pdf)
+
+<use Abbildungen/Metall_Fit.pdf>
+Package luatex.def Info: Abbildungen/Metall_Fit.pdf used on input line 249.
+(luatex.def)             Requested size: 188.21371pt x 141.1564pt.
+
+<Abbildungen/Salz_Fit_Egor.pdf, id=404, 578.16pt x 433.62pt>
+File: Abbildungen/Salz_Fit_Egor.pdf Graphic file (type pdf)
+
+<use Abbildungen/Salz_Fit_Egor.pdf>
+Package luatex.def Info: Abbildungen/Salz_Fit_Egor.pdf used on input line 254.
+(luatex.def)             Requested size: 188.21371pt x 141.1564pt.
+) [19<./Abbildungen/Metall_Fit.pdf><./Abbildungen/Salz_Fit_Egor.pdf>] (./conten
+t/diskussion.tex) [20](compiling luc: /usr/local/texlive/2016/texmf-var/luatex-c
+ache/generic/fonts/otl/lmromancaps10-regular.luc)(load luc: /Users/Egor/Library/
+texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc)
+LaTeX Font Info:    Try loading font information for EU2+lmtt on input line 37.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu2lmtt.fd
+File: eu2lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)(compiling luc: /usr/local/texlive/2016/texmf-var/luatex-cache/generic/fonts/ot
+l/lmmono10-regular.luc)(load luc: /Users/Egor/Library/texlive/2016/texmf-var/lua
+tex-cache/generic/fonts/otl/lmmono10-regular.luc) [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
+ (./build/main.aux
+Language ngerman already loaded; id is 8)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
+Package rerunfilecheck Info: File `main.aux' has not changed.
+(rerunfilecheck)             Checksum: 365333285DD9DE4B75A6E22EEEC02ABA;19944.
+Package rerunfilecheck Info: File `main.toc' has not changed.
+(rerunfilecheck)             Checksum: 2A4E76DA7A572DFE134D536C64DA5D30;1593.
+
+
+LaTeX Warning: There were undefined references.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+
+\openout1 = main.run.xml
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 42769 strings out of 495119
+ 100000,1648299 words of node,token memory allocated
+ 5448 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 573 glue, 1 kern, 238 attribute, 62 glue_spec, 238 
+attribute_list, 1 write, 1 pdf_action nodes
+   avail lists: 1:2,2:435,3:203,4:36,5:286,6:3178,7:720,8:149,9:374,10:15,11:369
+,12:1
+ 45003 multiletter control sequences out of 65536+600000
+ 100 fonts using 29621743 bytes
+ 71i,15n,104p,8501b,2482s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.ot
+f></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmromancaps10-reg
+ular.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman10-
+italic.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman8
+-regular.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm-math/l
+atinmodern-math.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/xi
+ts/xits-math.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm-ma
+th/latinmodern-math.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/publi
+c/lm/lmroman10-bold.otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/publi
+c/lm-math/latinmodern-math.otf></usr/local/texlive/2016/texmf-dist/fonts/opentyp
+e/public/lm/lmroman10-regular.otf></usr/local/texlive/2016/texmf-dist/fonts/open
+type/public/lm/lmroman12-regular.otf></usr/local/texlive/2016/texmf-dist/fonts/o
+pentype/public/lm/lmsans10-bold.otf></usr/local/texlive/2016/texmf-dist/fonts/op
+entype/public/lm/lmroman12-bold.otf>
+Output written on main.pdf (21 pages, 788473 bytes).
+
+PDF statistics: 679 PDF objects out of 1000 (max. 8388607)
+ 441 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 131072)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+
