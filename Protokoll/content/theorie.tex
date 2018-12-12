@@ -2,8 +2,6 @@
 \label{sec:Theorie}
 \subsection{Grundlegende Beschreibung von Kristallstrukturen}
 Kristalle sind räumlich periodische Gitter, die durch die Verbindung der zugrunde liegenden Materialien besteht. 
-Die kleinste Einheit dieses Gitters wird Basis genannt, welche durch drei Gittervektoren $\vec{a}$, $\vec{b}$ und $\vec{c}$ aufgespannt wird.
-Die Struktur des Gitters ist durch die Basis dann eindeutig festgelegt und heißt Elementarzelle.
 Ohne weitere Eigenschaften festzulegen gibt es unendlich viele Punktgitter.
 Zwei 2D-Gitter sind in Abbildung \ref{fig:2dgitter} dargestellt.
 \begin{figure}
@@ -19,6 +17,9 @@ Die einfachste erhaltene Symmetrie, die einen Kristall auszeichnet ist die funda
 \label{eq:fundamentale trans}
 \end{equation}
 Die Vorfaktoren der Basisvektoren sind Elemente der natürlichen Zahlen $\mathbb{N}$.
+Die kleinste Einheit dieses Gitters wird Basis genannt, welche durch die drei Gittervektoren $\vec{a}$, $\vec{b}$ und $\vec{c}$ aufgespannt wird.
+Das Gitters ergibt zusammen mit den Basisvektoren dann eine eindeutig festgelegte Elementarzelle.
+Die sich periodisch wiederholenden Elemantarzellen ergeben die Kristallstruktur.
 Besitzt das Parallelepiped, welches durch die drei Basisvektoren aufgespannt wird, nur in jeder Ecke ein Atom, so wird diese Zelle primitiv gennant.
 Da nur der Anteil des Atoms, der innerhalb des Epipeds liegt, zählt, besteht die primitive EInheistzelle aus einem Atom.
 Das ist die simpelste Form einer Zelle. 
@@ -52,7 +53,7 @@ Beispiele für die zuletzt genannten Gittertypen sind in Abbildung \ref{fig:gitt
 \label{fig:gittertypen}
 \end{figure}
 
-In der Natur kristallisieren Metalle und Salze nicht in einer so simplen kubischen Struktur. 
+In der Natur kristallisieren Metalle eher selten in einer simplen kubischen Struktur. 
 Die häufigste Struktur ist die Diamantstruktur. 
 Sie besteht aus  zwei kubisch-flächenzentrierten Gittern die um ein viertel der Raumdiagonalen zueinander verschoben sind. 
 Es folgt, dass die Diamantstruktur acht Atome an den Orten
@@ -60,11 +61,12 @@ Es folgt, dass die Diamantstruktur acht Atome an den Orten
 (0,0,0), \left(\frac{1}{2}, \frac{1}{2}, 0 \right), \left(\frac{1}{2}, 0, \frac{1}{2} \right), \left(0, \frac{1}{2}, \frac{1}{2} \right), \left(\frac{1}{4}, \frac{1}{4}, \frac{1}{4} \right), \left(\frac{3}{4}, \frac{3}{4}, \frac{1}{4} \right), \left(\frac{3}{4}, \frac{1}{4}, \frac{3}{4} \right),  \left(\frac{1}{4}, \frac{3}{4}, \frac{3}{4} \right)
 \end{equation}
 in der Einheitszelle aufweist.
-Die vier nächsten Nachbarn jedes Atoms liegen auf einer Tetraeder Struktur um das Atom herum.
+Die vier nächsten Nachbarn jedes Atoms liegen auf einer Tetraederstruktur um das Atom herum.
 Dies entspricht der sp$^3$-Hybridisierung des Kohlenstoffs und ist auch in Silizium und Germanium zu finden.\\
-Die Diamantstruktur unterscheidet sich von der Zinkblende nur dadurch, dass die Zinkblende aus zwei unterschiedlichen Atomen besteht, die getrennt auf die jeweiligen fcc-Strukturen verteilt sind.\\
-Salze kristallisieren dahingegen vielfältiger.
-Es werden drei Arten vorgestellt.\\
+Bei Salzen gibt es auch die Diamantstruktur.
+Der Unterschied zu den Metallen besteht darin, dass die Basis zwei-atomig ist, welche auf die beiden fcc-Gitter verteilt sind.
+Dannn heißt die Diamantstruktur Zinkblende.\\
+Es werden drei weitere kubische Kristallgitter für Salze vorgestellt.\\
 Die erste ist die Steinsalz-Struktur. 
 Sie ist wie die Diamantstruktur, wobei die fcc-Gitter diesmal um eine halbe Raumdiagonale gegeneinander verschoben sind\\
 Im Gegensatz dazu besteht die Casiumchlorid-Struktur aus zwei primitiven Gittern, die um eine halbe Raumdiagonale gegeneinander verschoben sind. 
@@ -95,14 +97,14 @@ Dies wird in Abbildung \ref{fig:miller} durch die beispielhafte Netzebenen deutl
 	\end{minipage}
 	\begin{minipage}[t]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{Abbildungen/netzebene}
-		\subcaption{Schematische Darstellung des Netzebenenabstands d einer belibig gewählten Netzebene}
+		\subcaption{Schematische Darstellung des Netzebenenabstands d einer beliebig gewählten Netzebene}
 	\end{minipage}
 	\caption{Beispielhafte Netzebenen zur Bestimmung der Millerindizes und des Netzebenenabstandes \cite{Anleitung}. }
 	\label{fig:miller}
 \end{figure}
 
-Tritt der Fall auf, dass eine Netzebene im euklidischen Raum nur eine Achse schneidet, und die anderen beiden nicht, also der Wert $\infty$ ist, so ist der reziproke Wert 0. 
-Beispiel für diesen Fall sind die Würfeloberflächen eines kubischen Gitters. 
+Tritt  beispielsweise der Fall auf, dass eine Netzebene im euklidischen Raum nur eine Achse schneidet, und die anderen beiden nicht, also der Wert $\infty$ ist, so ist der reziproke Wert 0. 
+Dieser Fall tritt bei den Würfeloberflächen eines kubischen Gitters auf. 
 Die obere Seite hat die Millerindizes (001).\\\\
 Der Abstand einer Ebene zum Ursprung des Koordinatensystems wird durch den Netzebenenabstand $d$ angegeben.
 Der Netzebenanbstand ist der Betrag des Vektors $\vec{d}$, der stets senkrecht auf der Ebene steht und den Null-Punkt des Koordinatensystems mit dem der Ebene verbindet, wie in Abbildung \ref{fig:miller} gezeigt.
@@ -138,6 +140,7 @@ Die Intensität der abgegeben Strahlung ist in Gleichung (\ref{eq:dipol}) gegebe
 \text{I}_e(r,\theta) = \text{I}_0\times \left(\frac{\mu_0 \text{q}^2}{4 \pi \text{m}}\right) \frac{1}{r^2} \frac{1+\cos{2\theta}^2}{2}
 \label{eq:dipol}
 \end{equation}
+Dabei ist I$_0$ die Intensität des einfallenden Strahls, $\mu_0$ die Induktionskonstante, r der Abstand zwischen Aufpunkt und Teilchen, q die Ladung und $\theta$ die Hälfte des Winkels zwischen einfallendem und gestreutem Strahl.\\
 Da nicht nur an einem Elektron gestreut wird, sondern an allen Netzebenen, gibt es Interferenzeffekte, die die Streuamplituden verstärken oder vernichten.
 Diese Interfenzmuster sind abhängig vom Kristall, sodass aus dem Interferenzbild rückwirkend auf die Kristallstruktur geschlossen werden kann.
 Die Wellenlänge der Röntgenstrahlung ca. genauso groß wie die Ausdehnung der Atomhülle, sodass das atomare Streuvermögen nicht proportional zur Ordnungszahl $z$ ist.
@@ -148,7 +151,7 @@ Das Verhältnis der gestreuten Intensität $I_e$ der Elektronen und $I_a$ der At
 \text{f}^2 = \frac{\text{I}_a}{\text{I}_e}
 \label{eq:Aform}
 \end{equation}
-Der Atomformfaktor ist abhängig von z, der Röntgenwellenlänge $\lambda$ und dem Streuwinkel $\theta$. 
+Der Atomformfaktor ist abhängig von der Ordnungszahl $z$, der Röntgenwellenlänge $\lambda$ und dem Streuwinkel $\theta$. 
 Ist $\theta$ klein und $\lambda$ groß, so ist f $\approx$ z.
 Die genau Bestimmung von $f$ benötigt die Elektronendichteverteilung des Kristalls $\rho(\vec{\text{r}})$ über dessen Hülle phasenrichtig integriert werden muss.\\
 Für die Bestimmung des Gangunterschieds einer einlaufenden und gestreuten EM-Welle wird die Skizze aus Abbildung (\ref{fig:streuung}) verwendet.
@@ -198,7 +201,7 @@ Veranschaulicht wird dies in Gleichung (\ref{eq:winkel})
 Damit ist die gestreute Intensität der Röntgenstrahlung an einem Atom abhängig vom Formfaktor $f$ proportional zur Streuintensität I$_e$.\\\\
 Die Streuung an einem Atom ist damit hinreichend diskutiert und muss nun auf die Streuung an einer Elementarzelle ausgeweitet werden.
 Das Prinzip  einer Streuung zweier Wellen an zwei Atomen ist dabei analog zu dem vorherigen Prinzip.
-Es ergibt sich wieder eine Phasendifferenz $\Delta \phi$ und eine daraus resultierende Streuamplitude aus Gleichung (\ref{eq:streuA}), die INterfenzefffekten unterlegen ist.
+Es ergibt sich wieder eine Phasendifferenz $\Delta \phi$ und eine daraus resultierende Streuamplitude aus Gleichung (\ref{eq:streuA}), die Interfenzefffekten unterlegen ist.
 Dabei wird angenommen, dass ein Atom im Ursprung des Koordinatensystems liegt und die anderen im Abstand $\vec{\text{r}_j}$ folgen.
 \begin{equation}
 \text{A} = \sum_j \text{f}_j \text{e}^{-2\pi i \vec{\text{r}_j} (\vec{\text{k}}-\vec{\text{k}_0}) } \text{I}_e
