@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.27)  7 DEC 2018 15:25
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.27)  12 DEC 2018 10:37
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -341,7 +341,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.174 seconds)
+luaotfload | main : initialization completed in 0.182 seconds)
 Lua module: fontspec 2016/02/01 2.5a Advanced font selection for LuaLaTeX.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
@@ -1842,7 +1842,10 @@ Package biblatex Info: ... file 'german.lbx' found.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 File: german.lbx 2016/05/14 v3.4 biblatex localization (PK/JW/AB)
 )
-(./build/main.aux)
+(./build/main.aux
+luatex-hyphen: loading patterns and exceptions for: german (\language4)
+luatex-hyphen: info: no hyphenation exceptions for this language
+Language ngerman already loaded; id is 8)
 \openout1 = main.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -1861,7 +1864,8 @@ LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 15.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 15.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 15.
@@ -1871,6 +1875,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
+
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count421
@@ -2005,17 +2010,14 @@ LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./logos/t
 u-logo.pdf>]
+(./build/main.toc)
 \tf@toc=\write5
 
 \openout5 = main.toc
-
-[2
+ [2
 
 ] (./content/einleitung.tex) (./content/theorie.tex
-
-LaTeX Warning: Reference `fig:2dgitter' on page 3 undefined on input line 8.
-
-<Abbildungen/2dgitter.png, id=25, 754.017pt x 327.02174pt>
+<Abbildungen/2dgitter.png, id=26, 754.017pt x 327.02174pt>
 File: Abbildungen/2dgitter.png Graphic file (type png)
 
 <use Abbildungen/2dgitter.png>
@@ -2028,20 +2030,13 @@ LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 12.
 
 LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 12.
 
-
-LaTeX Warning: Reference `eq:fundamentale trans' on page 3 undefined on input li
-ne 16.
-
 (compiling luc: /usr/local/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl
 /lmroman8-regular.luc)(load luc: /Users/Egor/Library/texlive/2016/texmf-var/luat
 ex-cache/generic/fonts/otl/lmroman8-regular.luc)(compiling luc: /usr/local/texli
 ve/2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc)(load luc:
  /Users/Egor/Library/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmrom
 an6-regular.luc)
-
-LaTeX Warning: Reference `fig:System' on page 3 undefined on input line 26.
-
-<Abbildungen/System.png, id=26, 645.00975pt x 478.1865pt>
+<Abbildungen/System.png, id=29, 645.00975pt x 478.1865pt>
 File: Abbildungen/System.png Graphic file (type png)
 
 <use Abbildungen/System.png>
@@ -2054,12 +2049,8 @@ LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 30.
 
 LaTeX Warning: Citation 'Anleitung' on page 3 undefined on input line 30.
 
-
-LaTeX Warning: Reference `fig:gittertypen' on page 3 undefined on input line 40.
-
-
 [3] [4<./Abbildungen/2dgitter.png><./Abbildungen/System.png>]
-<Abbildungen/raumzentriert.png, id=45, 329.43076pt x 248.72925pt>
+<Abbildungen/raumzentriert.png, id=50, 329.43076pt x 248.72925pt>
 File: Abbildungen/raumzentriert.png Graphic file (type png)
 
 <use Abbildungen/raumzentriert.png>
@@ -2070,7 +2061,7 @@ LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
 (Font)              scaled to size 4.99992pt on input line 45.
 
-<Abbildungen/flaechenzentriert.png, id=46, 283.0575pt x 242.70676pt>
+<Abbildungen/flaechenzentriert.png, id=51, 283.0575pt x 242.70676pt>
 File: Abbildungen/flaechenzentriert.png Graphic file (type png)
 
 <use Abbildungen/flaechenzentriert.png>
@@ -2088,10 +2079,7 @@ LaTeX Warning: Citation 'Anleitung' on page 5 undefined on input line 51.
 
 LaTeX Warning: Citation 'Anleitung' on page 5 undefined on input line 51.
 
-
-LaTeX Warning: Reference `fig:hexagonal' on page 5 undefined on input line 76.
-
-<Abbildungen/hexagonal.png, id=47, 300.52275pt x 393.26926pt>
+<Abbildungen/hexagonal.png, id=53, 300.52275pt x 393.26926pt>
 File: Abbildungen/hexagonal.png Graphic file (type png)
 
 <use Abbildungen/hexagonal.png>
@@ -2110,17 +2098,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--84
  []
 
 [5<./Abbildungen/raumzentriert.png><./Abbildungen/flaechenzentriert.png>]
-
-LaTeX Warning: Reference `fig:miller' on page 6 undefined on input line 89.
-
-<Abbildungen/miller.png, id=56, 308.95425pt x 218.0145pt>
+<Abbildungen/miller.png, id=64, 308.95425pt x 218.0145pt>
 File: Abbildungen/miller.png Graphic file (type png)
 
 <use Abbildungen/miller.png>
 Package luatex.def Info: Abbildungen/miller.png used on input line 93.
 (luatex.def)             Requested size: 188.21371pt x 132.81232pt.
 
-<Abbildungen/netzebene.png, id=57, 420.97275pt x 369.17924pt>
+<Abbildungen/netzebene.png, id=65, 420.97275pt x 369.17924pt>
 File: Abbildungen/netzebene.png Graphic file (type png)
 
 <use Abbildungen/netzebene.png>
@@ -2137,50 +2122,19 @@ LaTeX Warning: Citation 'Anleitung' on page 6 undefined on input line 100.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:miller' on page 6 undefined on input line 108.
-
-
-LaTeX Warning: Reference `fig:miller' on page 6 undefined on input line 111.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 104--112
 
  []
 
-[6<./Abbildungen/hexagonal.png>]
-
-LaTeX Warning: Reference `eq:Abstand1' on page 7 undefined on input line 121.
-
-
-LaTeX Warning: Reference `eq:Abstand2' on page 7 undefined on input line 121.
-
-
-LaTeX Warning: Reference `eq:Abstand3' on page 7 undefined on input line 121.
-
-
-LaTeX Warning: Reference `eq:Abstand4' on page 7 undefined on input line 126.
-
-
-LaTeX Warning: Reference `eq:dipol' on page 7 undefined on input line 136.
-
-[7<./Abbildungen/miller.png><./Abbildungen/netzebene.png>]
-
-LaTeX Warning: Reference `eq:dipol' on page 8 undefined on input line 144.
-
-
-LaTeX Warning: Reference `eq:Aform' on page 8 undefined on input line 146.
-
-
-LaTeX Warning: Reference `fig:streuung' on page 8 undefined on input line 154.
-
-<Abbildungen/streuung.png, id=74, 283.65974pt x 174.05025pt>
+[6<./Abbildungen/hexagonal.png>] [7<./Abbildungen/miller.png><./Abbildungen/netz
+ebene.png>] <Abbildungen/streuung.png, id=94, 283.65974pt x 174.05025pt>
 File: Abbildungen/streuung.png Graphic file (type png)
 
 <use Abbildungen/streuung.png>
 Package luatex.def Info: Abbildungen/streuung.png used on input line 157.
 (luatex.def)             Requested size: 188.21371pt x 115.48433pt.
 
-<Abbildungen/streuwinkel.png, id=75, 224.037pt x 237.2865pt>
+<Abbildungen/streuwinkel.png, id=95, 224.037pt x 237.2865pt>
 File: Abbildungen/streuwinkel.png Graphic file (type png)
 
 <use Abbildungen/streuwinkel.png>
@@ -2194,66 +2148,23 @@ LaTeX Warning: Citation 'Anleitung' on page 8 undefined on input line 164.
 LaTeX Warning: Citation 'Anleitung' on page 8 undefined on input line 164.
 
 
-LaTeX Warning: Reference `eq:lambda' on page 8 undefined on input line 167.
-
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `eq:gangu' on page 8 undefined on input line 172.
-
-
-LaTeX Warning: Reference `eq:phase' on page 8 undefined on input line 172.
-
-
-LaTeX Warning: Reference `eq:normo' on page 8 undefined on input line 182.
-
 [8]
-
-LaTeX Warning: Reference `eq:fourier' on page 9 undefined on input line 187.
-
-
-LaTeX Warning: Reference `fig:streuung' on page 9 undefined on input line 192.
-
-
-LaTeX Warning: Reference `eq:winkel' on page 9 undefined on input line 193.
-
-
-LaTeX Warning: Reference `eq:streuA' on page 9 undefined on input line 201.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 197--203
 
  []
 
 [9<./Abbildungen/streuung.png><./Abbildungen/streuwinkel.png>]
-
-LaTeX Warning: Reference `eq:Struk' on page 10 undefined on input line 208.
-
-
-LaTeX Warning: Reference `fig:bragg' on page 10 undefined on input line 217.
-
-<Abbildungen/bragg.png, id=94, 486.618pt x 349.305pt>
+<Abbildungen/bragg.png, id=127, 486.618pt x 349.305pt>
 File: Abbildungen/bragg.png Graphic file (type png)
 
 <use Abbildungen/bragg.png>
 Package luatex.def Info: Abbildungen/bragg.png used on input line 220.
 (luatex.def)             Requested size: 209.12778pt x 150.11827pt.
-
-
-LaTeX Warning: Reference `eq:gang2' on page 10 undefined on input line 224.
-
-
-LaTeX Warning: Reference `eq:bragg' on page 10 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:Struk2' on page 10 undefined on input line 239.
-
-[10<./Abbildungen/bragg.png>]) [11] (./content/durchfuehrung.tex
-
-LaTeX Warning: Reference `fig:Aufbau' on page 12 undefined on input line 6.
-
-<Abbildungen/Aufbau.png, id=112, 565.51276pt x 423.984pt>
+ [10<./Abbildungen/bragg.png>]) [11]
+(./content/durchfuehrung.tex
+<Abbildungen/Aufbau.png, id=151, 565.51276pt x 423.984pt>
 File: Abbildungen/Aufbau.png Graphic file (type png)
 
 <use Abbildungen/Aufbau.png>
@@ -2281,16 +2192,16 @@ l.20 ...n{3}{c|}{Vorne} & \multicolumn{3}{c}{Hinten}
                                                   \\
 
 Here is how much of LuaTeX's memory you used:
- 42424 strings out of 495119
+ 42435 strings out of 495119
  100000,1648299 words of node,token memory allocated
  11682 words of node memory still in use:
    70 hlist, 6 vlist, 16 rule, 88 disc, 7 local_par, 4 dir, 18 math, 463 glue, 5
 1 kern, 27 penalty, 1 unset, 805 glyph, 4 align_record, 1 span, 199 attribute, 6
 5 glue_spec, 199 attribute_list, 11 temp, 1 align_stack, 1 if_stack, 4 write, 4 
 pdf_dest nodes
-   avail lists: 1:2,2:357,3:165,4:29,5:219,6:3040,7:317,8:129,9:306,10:13,11:449
+   avail lists: 1:3,2:357,3:170,4:26,5:219,6:3081,7:315,8:130,9:304,10:15,11:455
 ,12:1
- 44756 multiletter control sequences out of 65536+600000
- 98 fonts using 29365235 bytes
+ 44762 multiletter control sequences out of 65536+600000
+ 98 fonts using 29365763 bytes
  71i,9n,104p,8501b,2431s stack positions out of 5000i,500n,10000p,200000b,100000s
 !  ==> Fatal error occurred, no output PDF file produced!

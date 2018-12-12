@@ -1,9 +1,10 @@
 # Fdb version 3
-["biber build/main"] 0 "build/main.bcf" "build/main.bbl" "build/main" 0
-  "build/main.bcf" 1544192738 92819 3784eac515fbf560cdcfbccc471596c6 ""
+["biber build/main"] 1544607421 "build/main.bcf" "build/main.bbl" "build/main" 1544607421
+  "build/main.bcf" 1544607320 92819 3784eac515fbf560cdcfbccc471596c6 ""
   (generated)
+  "build/main.blg"
   "build/main.bbl"
-["pdflatex"] 1544192727 "main.tex" "build/main.pdf" "main" 1544192727
+["pdflatex"] 1544607425 "main.tex" "build/main.pdf" "main" 1544607425
   "/Users/Egor/Library/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/latinmodern-math.luc" 1469552378 623200 d9ec0a36db7921e1440f3f931165121a ""
   "/Users/Egor/Library/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc" 1469552376 135607 ee7ff4a99c9a855ae442bf272e57e27e ""
   "/Users/Egor/Library/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-italic.luc" 1469552375 136338 91869899c8f4bfcd000e090a1d821f9c ""
@@ -201,8 +202,9 @@
   "Abbildungen/raumzentriert.png" 1544192567 16417 b267efa66546a65e7401bc57f5ff183d ""
   "Abbildungen/streuung.png" 1544192567 18442 48fb8d365277c22a514dd9f4f1c5c882 ""
   "Abbildungen/streuwinkel.png" 1544192567 13651 b43a9bee59fe3ed58f179be64ebdf5e8 ""
-  "build/main.aux" 1544192727 8 a94a2480d3289e625eea47cd1b285758 ""
+  "build/main.aux" 1544607320 11919 5c62592614e3ca2659c6b5c042cfce1b ""
   "build/main.bbl" 0 -1 0 "biber build/main"
+  "build/main.toc" 0 -1 0 ""
   "content/auswertung.tex" 1544192567 6068 cd78dc3386f8725c20648695f21847d9 ""
   "content/durchfuehrung.tex" 1544192567 2828 3e11c9000d46c2b9d1d261d675295dbb ""
   "content/einleitung.tex" 1544192567 1239 a761fb711ea03e5ce25e345e3b6f8f0c ""
@@ -211,9 +213,9 @@
   "logos/tu-logo.pdf" 1544192567 14200 395b646e2b706d1f3c7ca6b6858fdf58 ""
   "main.tex" 1544192567 779 0d5d4dd61733ad7a58260d625f7ef330 ""
   (generated)
-  "build/main.bcf"
   "build/main.pdf"
   "/Users/Egor/Library/texlive/2016/texmf-var/m_t_x_t_e_s_t.tmp"
-  "build/main.aux"
+  "build/main.bcf"
   "build/main.log"
+  "build/main.aux"
   "build/main.toc"

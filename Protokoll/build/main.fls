@@ -288,6 +288,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT build/main.aux
 INPUT build/main.aux
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/hyph-utf8/patterns/txt/hyph-de-1901.pat.txt
 OUTPUT build/main.aux
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
@@ -348,6 +349,9 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT build/main.toc
+INPUT build/main.toc
+INPUT build/main.toc
 OUTPUT build/main.toc
 INPUT ./content/einleitung.tex
 INPUT ./content/einleitung.tex
