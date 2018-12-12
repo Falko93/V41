@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.27)  7 DEC 2018 15:16
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.27)  12 DEC 2018 11:57
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -341,7 +341,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.179 seconds)
+luaotfload | main : initialization completed in 0.189 seconds)
 Lua module: fontspec 2016/02/01 2.5a Advanced font selection for LuaLaTeX.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
@@ -2185,18 +2185,18 @@ Package luatex.def Info: Abbildungen/Aufbau.png used on input line 9.
  [12<./Abbildungen/Aufbau.png>]) [13]
 (./content/auswertung.tex [14]
 
-Package caption Warning: \label without proper reference on input line 177.
+Package caption Warning: \label without proper reference on input line 124.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:verhaeltnisse' on page 15 undefined on input line 
-146.
+93.
 
 <Abbildungen/verhaeltnisse.pdf, id=228, 578.16pt x 433.62pt>
 File: Abbildungen/verhaeltnisse.pdf Graphic file (type pdf)
 
 <use Abbildungen/verhaeltnisse.pdf>
-Package luatex.def Info: Abbildungen/verhaeltnisse.pdf used on input line 167.
+Package luatex.def Info: Abbildungen/verhaeltnisse.pdf used on input line 114.
 (luatex.def)             Requested size: 188.21371pt x 141.1564pt.
 
 <Abbildungen/verhaeltnisse_Salz.pdf, id=229, 578.16pt x 433.62pt>
@@ -2204,14 +2204,14 @@ File: Abbildungen/verhaeltnisse_Salz.pdf Graphic file (type pdf)
 
 <use Abbildungen/verhaeltnisse_Salz.pdf>
 Package luatex.def Info: Abbildungen/verhaeltnisse_Salz.pdf used on input line 1
-72.
+19.
 (luatex.def)             Requested size: 188.21371pt x 141.1564pt.
 
 <Abbildungen/formfaktoren.pdf, id=233, 1150.2975pt x 536.0025pt>
 File: Abbildungen/formfaktoren.pdf Graphic file (type pdf)
 
 <use Abbildungen/formfaktoren.pdf>
-Package luatex.def Info: Abbildungen/formfaktoren.pdf used on input line 183.
+Package luatex.def Info: Abbildungen/formfaktoren.pdf used on input line 130.
 (luatex.def)             Requested size: 376.42744pt x 175.40102pt.
  [15]
 
@@ -2221,17 +2221,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: Abbildungen/Syst1.png Graphic file (type png)
 
 <use Abbildungen/Syst1.png>
-Package luatex.def Info: Abbildungen/Syst1.png used on input line 198.
+Package luatex.def Info: Abbildungen/Syst1.png used on input line 145.
 (luatex.def)             Requested size: 209.12778pt x 185.38289pt.
  [16<./Abbildungen/verhaeltnisse.pdf><./Abbildungen/verhaeltnisse_Salz.pdf>]
 <Abbildungen/Syst2.png, id=367, 304.7385pt x 289.08pt>
 File: Abbildungen/Syst2.png Graphic file (type png)
 
 <use Abbildungen/Syst2.png>
-Package luatex.def Info: Abbildungen/Syst2.png used on input line 217.
+Package luatex.def Info: Abbildungen/Syst2.png used on input line 164.
 (luatex.def)             Requested size: 209.12778pt x 198.3803pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--223
+Underfull \hbox (badness 10000) in paragraph at lines 154--170
 
  []
 
@@ -2240,14 +2240,14 @@ Syst2.png>] <Abbildungen/Metall_Fit.pdf, id=403, 578.16pt x 433.62pt>
 File: Abbildungen/Metall_Fit.pdf Graphic file (type pdf)
 
 <use Abbildungen/Metall_Fit.pdf>
-Package luatex.def Info: Abbildungen/Metall_Fit.pdf used on input line 249.
+Package luatex.def Info: Abbildungen/Metall_Fit.pdf used on input line 196.
 (luatex.def)             Requested size: 188.21371pt x 141.1564pt.
 
 <Abbildungen/Salz_Fit_Egor.pdf, id=404, 578.16pt x 433.62pt>
 File: Abbildungen/Salz_Fit_Egor.pdf Graphic file (type pdf)
 
 <use Abbildungen/Salz_Fit_Egor.pdf>
-Package luatex.def Info: Abbildungen/Salz_Fit_Egor.pdf used on input line 254.
+Package luatex.def Info: Abbildungen/Salz_Fit_Egor.pdf used on input line 201.
 (luatex.def)             Requested size: 188.21371pt x 141.1564pt.
 ) [19<./Abbildungen/Metall_Fit.pdf><./Abbildungen/Salz_Fit_Egor.pdf>] (./conten
 t/diskussion.tex) [20](compiling luc: /usr/local/texlive/2016/texmf-var/luatex-c
@@ -2267,7 +2267,7 @@ Language ngerman already loaded; id is 8)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
 Package rerunfilecheck Info: File `main.aux' has not changed.
-(rerunfilecheck)             Checksum: 365333285DD9DE4B75A6E22EEEC02ABA;19944.
+(rerunfilecheck)             Checksum: 9B2528A9A42904CFE0CEDB204C9A45C9;19942.
 Package rerunfilecheck Info: File `main.toc' has not changed.
 (rerunfilecheck)             Checksum: 2A4E76DA7A572DFE134D536C64DA5D30;1593.
 
@@ -2289,7 +2289,7 @@ attribute_list, 1 write, 1 pdf_action nodes
    avail lists: 1:2,2:435,3:203,4:36,5:286,6:3178,7:720,8:149,9:374,10:15,11:369
 ,12:1
  45003 multiletter control sequences out of 65536+600000
- 100 fonts using 29621743 bytes
+ 100 fonts using 29622007 bytes
  71i,15n,104p,8501b,2482s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.ot
 f></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmromancaps10-reg

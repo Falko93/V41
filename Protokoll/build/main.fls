@@ -1,4 +1,4 @@
-PWD /Users/Egor/Documents/Uni/MasterFP/V41/Protokoll
+PWD /Users/Egor/Documents/Uni/MasterFP/Neu/V41/Protokoll
 INPUT /usr/local/texlive/2016/texmf-var/web2c/luatex/lualatex.fmt
 INPUT ./main.tex
 OUTPUT build/main.log
