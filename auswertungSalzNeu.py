@@ -49,6 +49,7 @@ def Strukturamplitude_Salz(f1 = 1, f2 = 1, gitter = 'Zinkblende'): # gitter = 'S
 	temp = 0
 	S = 0
 	reflexe = []
+	Amp = []
 	if gitter == 'Fluorit': #bei Fluorit gibt es 2 mal ein Fluorti Atome und damit 3 Atome in der Struktur insgesamt; nicht 2
 		for h in range(0,10):
 			for k in range(0,h+1):
@@ -58,15 +59,17 @@ def Strukturamplitude_Salz(f1 = 1, f2 = 1, gitter = 'Zinkblende'): # gitter = 'S
 						S = 0
 						for i in range(0,4):
 							S = S + f1 * np.exp(-2j * np.pi * (r[i][0] * h + r[i][1] * k + r[i][2] * l))
+							Amp.append(S)
 						for i in range(4,12):
 							S = S + f2 * np.exp(-2j * np.pi * (r[i][0] * h + r[i][1] * k + r[i][2] * l))
+							Amp.append(S)
 						m.append(h**2 + k**2 + l**2)
 						if 0.001 < abs(S): # es wird nie ganz Null weil Computaional Physics
 							reflexe.append([h, k, l])
 							m_reflexe.append(h**2 + k**2 + l**2)
 					else:
 						pass
-		infos = [reflexe, m_reflexe]
+		infos = [reflexe, m_reflexe, Amp]
 	
 		return infos
 	elif gitter == 'Caesiumchlorid':
@@ -78,15 +81,17 @@ def Strukturamplitude_Salz(f1 = 1, f2 = 1, gitter = 'Zinkblende'): # gitter = 'S
 						S = 0
 						for i in range(0,1):
 							S = S + f1 * np.exp(-2j * np.pi * (r[i][0] * h + r[i][1] * k + r[i][2] * l))
+							Amp.append(S)
 						for i in range(1,2):
 							S = S + f2 * np.exp(-2j * np.pi * (r[i][0] * h + r[i][1] * k + r[i][2] * l))
+							Amp.append(S)
 						m.append(h**2 + k**2 + l**2)
 						if 0.001 < abs(S): # es wird nie ganz Null weil Computaional Physics
 							reflexe.append([h, k, l])
 							m_reflexe.append(h**2 + k**2 + l**2)
 					else:
 						pass
-		infos = [reflexe, m_reflexe]
+		infos = [reflexe, m_reflexe, Amp]
 	
 		return infos
 	else:
@@ -98,15 +103,17 @@ def Strukturamplitude_Salz(f1 = 1, f2 = 1, gitter = 'Zinkblende'): # gitter = 'S
 						S = 0
 						for i in range(0,4):
 							S = S + f1 * np.exp(-2j * np.pi * (r[i][0] * h + r[i][1] * k + r[i][2] * l))
+							Amp.append(S)
 						for i in range(4,8):
 							S = S + f2 * np.exp(-2j * np.pi * (r[i][0] * h + r[i][1] * k + r[i][2] * l))
+							Amp.append(S)
 						m.append(h**2 + k**2 + l**2)
 						if 0.001 < abs(S): # es wird nie ganz Null weil Computaional Physics
 							reflexe.append([h, k, l])
 							m_reflexe.append(h**2 + k**2 + l**2)
 					else:
 						pass
-		infos = [reflexe, m_reflexe]
+		infos = [reflexe, m_reflexe, Amp]
 	
 		return infos
 
@@ -587,6 +594,7 @@ def main():
 	a = np.array(gitterkonstanteBragg(m, netzebenenabstand))
 
 	print('Gitterkonstanten für ' + Xi2_best[0] + ' Struktur: ', ' für ', Xi2_best[2], a)
+	print('Strukturamplituden Salz: ', Strukturamplitude_Salz(54, 54,gitter = Xi2_best[0])[2])
 
 	####################################################################################################
 	# Systematischer Fehler
