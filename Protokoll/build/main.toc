@@ -1,0 +1,19 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {german}
+\contentsline {section}{\numberline {1}Einleitung}{3}{section.1}
+\contentsline {section}{\numberline {2}Theoretischer Hintergrund}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Grundlegende Beschreibung von Kristallstrukturen}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Das kubische Kristallsystem}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Millersche Indizes und Netzebenenabstand}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Röntgenbeugung an Kristallen}{8}{subsection.2.4}
+\contentsline {section}{\numberline {3}Durchführung}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Versuchsaufbau}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Preparation der Probe}{13}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Entwicklung der Filme}{13}{subsection.3.3}
+\contentsline {section}{\numberline {4}Auswertung}{14}{section.4}
+\contentsline {subsection}{\numberline {4.1}Nicht verschwindende Reflexe}{15}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Bestimmung der Kristallstruktur}{15}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Systematische Fehler}{16}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Gitterkonstante}{19}{subsection.4.4}
+\contentsline {section}{\numberline {5}Diskussion}{20}{section.5}
